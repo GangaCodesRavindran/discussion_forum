@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Question</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: green;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid black;
+            font-family: Brush Script;
+        }
+        .back-button:hover {
+            background-color: blue;
+        }
+         body {
+            background-color: #333;
+            color: white;
+        }
+
+         h1 {
+            color: yellow;
+            font-weight: bold;
+            font-family: Times New Roman;
+            font-size: 50px;
+        }
+        h2 {
+            color: yellow;
+            font-weight: bold;
+            font-family: Cambria;
+            font-size: 22px;
+        }
+
+        .italic-text {
+            font-style: italic;
+        }
+        .indented-text {
+            text-indent: 10px;
+        }
+        .content_test {
+            color: white;
+            font-weight: italic;
+            font-family: Serif;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+<div class="center">
+<div class="container">
+        <div class="centered-heading">
+            <h1> Epiroc Tech Forum</h1>
+            <!-- Icon container -->
+            <div class="icon-container">
+                <img src="C:\Users\IPCGRA\OneDrive - Epiroc\Dokument\app_competancy\imgs\epiroc.jpeg" alt="Epiroc Image">
+                <i class="fas fa-icon"></i>
+            </div>
+        </div>
+        </div>
+        </div>
+<hr>
+    <h2>Post your Query</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="back-button">Submit</button> <a href="{% url 'home' %}" class="back-button">Go Back</a>
+    </form>
+
+
+</body>
+</html>

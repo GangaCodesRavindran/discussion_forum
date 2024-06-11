@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid black;
+            font-family: Brush Script;
+        }
+        .back-button:hover {
+            background-color: blue;
+        }
+        body {
+            background-color: rgb(128, 128, 128);
+            color: white;
+        }
+
+         h1 {
+            color: yellow;
+            font-weight: bold;
+            font-family: Times New Roman;
+            font-size: 50px;
+        }
+        h2 {
+            color: yellow;
+            font-weight: bold;
+            font-family: Cambria;
+            font-size: 22px;
+        }
+        .italic-text {
+            font-style: italic;
+        }
+        .indented-text {
+            text-indent: 50px;
+        }
+        .content_test {
+            color: white;
+            font-weight: italic;
+            font-family: Serif;
+            font-size: 22px;
+        }
+        footer {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 20px;
+            color: yellow;
+            font-weight: bold;
+            font-family: Cambria;
+        }
+    </style>
+</head>
+<body>
+{% load static %}
+<div class="center">
+    <div class="container">
+        <div class="centered-heading">
+            <h1> Epiroc Tech Forum</h1>
+            <!-- Icon container -->
+            <div class="icon-container">
+                <img src="{% static 'staticfiles/EPI-A.ST_BIG-0a5d7a3e.png' %}" alt="Epiroc Image">
+                <i class="fas fa-icon"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+    <h2>Contact Us</h2>
+    <h3>Main:</h3>
+    <p>Phone: 844-437-4762</p>
+    <p>Email: info.usa@epiroc.com</p>
+    <h3>Bangalore:</h3>
+    <p>Epiroc Mining India Limited</p>
+    <p>Address: 6th Floor L5 Nokia, Manyata Embassy Business Park, Outer Ring Road, Hebbal-KR Puram section, Bengaluru-560045, Karnataka, India</p>
+    <footer>
+        <a href="{% url 'home' %}">Home</a> |
+        <a href="{% url 'contact' %}">Contact</a> |
+        <a href="{% url 'about' %}">About</a>
+    </footer>
+</body>
+</html>

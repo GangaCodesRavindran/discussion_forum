@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: green;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid black;
+            font-family: Brush Script;
+        }
+        .back-button:hover {
+            background-color: blue;
+        }
+
+
+        h1 {
+            color: rgb(255, 199, 44);
+            font-weight: bold;
+            font-family: Times New Roman;
+            font-size: 90px;
+            background-color: rgb(66, 85, 99)
+        }
+        h2 {
+            color: yellow;
+            font-weight: bold;
+            font-family: Cambria;
+            font-size: 22px;
+        }
+
+        .italic-text {
+            font-style: italic;
+        }
+        .indented-text {
+            text-indent: 10px;
+        }
+        .content_test {
+            color: white;
+            font-weight: italic;
+            font-family: Serif;
+            font-size: 22px;
+        }
+        footer {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 20px;
+            color: yellow;
+            font-weight: bold;
+            font-family: Cambria;
+        }
+        .center {
+            text-align: center;
+        }
+        .container {
+            display: inline-block;
+        }
+        .centered-heading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .centered-heading img {
+            margin-right: 1px; /* Adjust the spacing between the image and the text */
+        }
+    </style>
+</head>
+<body>
+{% load static %}
+<div class="center">
+        <div class="container">
+            <div class="centered-heading">
+                <img src="{% static 'staticfiles/OIP.jpg' %}" alt="Epiroc Image">
+                <h1>Tech Forum</h1>
+            </div>
+        </div>
+    </div>
+<hr>
+<h2>Post your Query</h2>
+<form method="post" action="{% url 'post_question' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="back-button">Submit</button>
+</form>
+<hr>
+<h2>Query Glossary:</h2>
+<ul class="content_test">
+    {% for question in questions %}
+        <li><a href="{% url 'question_detail' question.pk %}">{{ question.title }}</a></li>
+    {% endfor %}
+</ul>
+
+
+<footer>
+    <a href="{% url 'home' %}">Home</a> |
+    <a href="{% url 'contact' %}">Contact</a> |
+    <a href="{% url 'about' %}">About</a>
+</footer>
+</body>
+</html>
