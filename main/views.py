@@ -32,9 +32,6 @@ def post_question(request):
             question.user = request.user
             question.save()
             return redirect('home')
-    else:
-        form = QuestionForm()
-    return render(request, 'post_question.html', {'form': form})
 
 def signup_view(request):
     return HttpResponse("This is the signup view")
@@ -50,5 +47,8 @@ def about_view(request):
 
 def landing(request):
     return render(request, 'landing.html')
+
+def library(request):
+    return render(request, 'library.html')
 
 
