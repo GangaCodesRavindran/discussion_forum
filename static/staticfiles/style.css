@@ -1,9 +1,13 @@
-.center {
-    text-align: center;
+/* Existing CSS... */
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
 }
 
 .back-button {
-    display: inline-block;
     padding: 10px 20px;
     background-color: green;
     color: black;
@@ -20,34 +24,22 @@
     background-color: blue;
 }
 
-h1 {
-    color: rgb(255, 199, 44);
-    font-weight: bold;
-    font-family: Times New Roman;
-    font-size: 90px;
-    background-color: rgb(66, 85, 99);
+/* Additional styles for header and footer */
+.top_background {
+    background-color: #425563;
+    border-color: #425563;
+    display: flex;
+    align-items: center;
+    padding: 20px;
 }
 
-h2 {
-    color: Black;
-    font-weight: bold;
-    font-family: Cambria;
-    font-size: 22px;
-}
-
-.italic-text {
-    font-style: italic;
-}
-
-.indented-text {
-    text-indent: 10px;
-}
-
-.content_test {
+.LabelBoldHeaderCss {
     color: white;
-    font-weight: italic;
-    font-family: Serif;
-    font-size: 22px;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    flex-grow: 1;
 }
 
 footer {
@@ -69,67 +61,4 @@ footer {
     color: white;
     padding: 10px 0;
     font-family: Cambria;
-}
-
-.center {
-    text-align: center;
-}
-
-.container {
-    display: inline-block;
-}
-
-.centered-heading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.centered-heading img {
-    margin-right: 1px;
-}
-
-.video-container {
-    width: 5in;
-    height: 5in;
-    overflow: hidden;
-    background: #000;
-    margin: 0 auto;
-}
-
-.video-container iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-@font-face {
-    font-family: "Raleway";
-    src: url('Raleway.ttf');
-}
-
-.LabelBoldHeaderCss {
-    color: white;
-    font-family: "Raleway", sans-serif;
-    font-weight: bold;
-    text-align: center;
-    font-size: 40px;
-    flex-grow: 1;
-}
-
-.top_background {
-    background-color: #425563;
-    border-color: #425563;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-}
-
-.top_background img {
-    margin-right: auto;
-}
-
-.top_background span {
-    text-align: center;
-    width: 100%;
 }
