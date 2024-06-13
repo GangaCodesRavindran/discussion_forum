@@ -1,81 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+    {% load static %}
     <title>Contact</title>
-    <style>
-        .center {
-            text-align: center;
-        }
-        .back-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            border: 2px solid black;
-            font-family: Brush Script;
-        }
-        .back-button:hover {
-            background-color: blue;
-        }
-        body {
-            background-color: rgb(128, 128, 128);
-            color: white;
-        }
-
-         h1 {
-            color: yellow;
-            font-weight: bold;
-            font-family: Times New Roman;
-            font-size: 50px;
-        }
-        h2 {
-            color: yellow;
-            font-weight: bold;
-            font-family: Cambria;
-            font-size: 22px;
-        }
-        .italic-text {
-            font-style: italic;
-        }
-        .indented-text {
-            text-indent: 50px;
-        }
-        .content_test {
-            color: white;
-            font-weight: italic;
-            font-family: Serif;
-            font-size: 22px;
-        }
-        footer {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            font-size: 20px;
-            color: yellow;
-            font-weight: bold;
-            font-family: Cambria;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/style.css' %}">
 </head>
 <body>
 {% load static %}
-<div class="center">
-    <div class="container">
-        <div class="centered-heading">
-            <h1> Epiroc Tech Forum</h1>
-            <!-- Icon container -->
-            <div class="icon-container">
-                <img src="{% static 'staticfiles/EPI-A.ST_BIG-0a5d7a3e.png' %}" alt="Epiroc Image">
-                <i class="fas fa-icon"></i>
-            </div>
-        </div>
+<div class="top_background">
+        <input type="image" src="{% static 'staticfiles/Logotype_yellow.png' %}" alt="Epiroc Logo" style="border-width:0px;">
+        <span id="ucHeaderId_lblHeader" class="LabelBoldHeaderCss">TECH FORM</span>
     </div>
-</div>
 <hr>
     <h2>Contact Us</h2>
     <h3>Main:</h3>
@@ -89,5 +24,8 @@
         <a href="{% url 'contact' %}">Contact</a> |
         <a href="{% url 'about' %}">About</a>
     </footer>
+    <div class="footer-note">
+        <span id="ucFooterId_footer">Web application developed and maintained by CMTEC.</span>
+    </div>
 </body>
 </html>

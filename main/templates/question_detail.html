@@ -4,77 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Question Detail</title>
-    <style>
-        .center {
-            text-align: center;
-        }
-        .back-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            border: 2px solid black;
-            font-family: Brush Script;
-        }
-        .back-button:hover {
-            background-color: blue;
-        }
-        body {
-            background-color: rgb(128, 128, 128);
-            color: white;
-        }
-
-         h1 {
-            color: yellow;
-            font-weight: bold;
-            font-family: Times New Roman;
-            font-size: 50px;
-        }
-        h2 {
-            color: yellow;
-            font-weight: bold;
-            font-family: Cambria;
-            font-size: 22px;
-        }
-        .italic-text {
-            font-style: italic;
-        }
-        .indented-text {
-            text-indent: 50px;
-        }
-        .content_test {
-            color: white;
-            font-weight: italic;
-            font-family: Serif;
-            font-size: 22px;
-        }
-        footer {
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            font-size: 14px;
-        }
-    </style>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/style.css' %}">
 </head>
 <body>
-<div class="center">
-    <div class="container">
-        <div class="centered-heading">
-            <h1>Epiroc Tech Forum</h1>
-            <!-- Icon container -->
-            <div class="icon-container">
-                <img src="C:\Users\IPCGRA\OneDrive - Epiroc\Dokument\app_competancy\imgs\epiroc.jpeg" alt="Epiroc Image">
-                <i class="fas fa-icon"></i>
-            </div>
-            <hr>
-        </div>
+<div class="top_background">
+        <input type="image" src="{% static 'staticfiles/Logotype_yellow.png' %}" alt="Epiroc Logo" style="border-width:0px;">
+        <span id="ucHeaderId_lblHeader" class="LabelBoldHeaderCss">TECH FORM</span>
     </div>
-</div>
+<hr>
 <h2><strong>Query - </strong>{{ question.title }}</h2>
 <p><strong class="italic-text">Description - </strong> {{ question.content }}</p>
 <hr>
@@ -94,5 +32,8 @@
     <a href="{% url 'contact' %}">Contact</a> |
     <a href="{% url 'about' %}">About</a>
 </footer>
+    <div class="footer-note">
+        <span id="ucFooterId_footer">Web application developed and maintained by CMTEC.</span>
+    </div>
 </body>
 </html>

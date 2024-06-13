@@ -4,57 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post Question</title>
-    <style>
-        .center {
-            text-align: center;
-        }
-        .back-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: green;
-            color: black;
-            text-align: center;
-            text-decoration: none;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            border: 2px solid black;
-            font-family: Brush Script;
-        }
-        .back-button:hover {
-            background-color: blue;
-        }
-         body {
-            background-color: #333;
-            color: white;
-        }
-
-         h1 {
-            color: yellow;
-            font-weight: bold;
-            font-family: Times New Roman;
-            font-size: 50px;
-        }
-        h2 {
-            color: yellow;
-            font-weight: bold;
-            font-family: Cambria;
-            font-size: 22px;
-        }
-
-        .italic-text {
-            font-style: italic;
-        }
-        .indented-text {
-            text-indent: 10px;
-        }
-        .content_test {
-            color: white;
-            font-weight: italic;
-            font-family: Serif;
-            font-size: 22px;
-        }
-    </style>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/style.css' %}">
 </head>
 <body>
 <div class="center">
