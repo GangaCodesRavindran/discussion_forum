@@ -1,3 +1,4 @@
+/* General styling */
 .center {
     text-align: center;
 }
@@ -29,7 +30,7 @@ h1 {
 }
 
 h2 {
-    color: Black;
+    color: black;
     font-weight: bold;
     font-family: Cambria;
     font-size: 22px;
@@ -71,43 +72,33 @@ footer {
     font-family: Cambria;
 }
 
-.center {
+/* Grid styles for videos */
+.video-grid-table {
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 1;
+    padding: 10px;
     text-align: center;
 }
 
-.container {
-    display: inline-block;
-}
-
-.centered-heading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.centered-heading img {
-    margin-right: 1px;
-}
-
-.video-container {
-    width: 5in;
-    height: 5in;
-    overflow: hidden;
-    background: #000;
-    margin: 0 auto;
-}
-
-.video-container iframe {
+.video-item img {
     width: 100%;
-    height: 100%;
-    border: 0;
+    max-width: 200px;
+    height: auto;
+    cursor: pointer;
 }
 
-@font-face {
-    font-family: "Raleway";
-    src: url('Raleway.ttf');
+.video-item h3 {
+    margin-top: 10px;
 }
 
+/* Header styles */
 .LabelBoldHeaderCss {
     color: white;
     font-family: "Raleway", sans-serif;
@@ -132,4 +123,24 @@ footer {
 .top_background span {
     text-align: center;
     width: 100%;
+}
+
+/* Video container styles */
+.video-container {
+    width: 5in;
+    height: 5in;
+    overflow: hidden;
+    background: #000;
+    margin: 0 auto;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url('Raleway.ttf');
 }
