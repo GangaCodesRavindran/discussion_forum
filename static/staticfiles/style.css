@@ -1,0 +1,81 @@
+/* Existing CSS... */
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.back-button {
+    padding: 10px 20px;
+    background-color: green;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid black;
+    font-family: Brush Script;
+}
+
+.back-button:hover {
+    background-color: blue;
+}
+
+/* Additional styles for header and footer */
+.top_background {
+    background-color: #425563;
+    border-color: #425563;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.LabelBoldHeaderCss {
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    flex-grow: 1;
+}
+
+footer {
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    font-size: 20px;
+    color: yellow;
+    font-weight: bold;
+    font-family: Cambria;
+}
+
+.center-image {
+    display: inline-block;
+
+}
+
+.image-with-text {
+    text-align: center;
+}
+
+.clickable-image {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    display: block;
+
+}
+
+.footer-note {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    background-color: #425563;
+    color: white;
+    padding: 10px 0;
+    font-family: Cambria;
+}
