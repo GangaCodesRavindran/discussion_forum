@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    {% load static %}
     <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
 </head>
 <body>
-    <h1>Welcome to the Login Page!</h1>
+{% load static %}
+<div class="top_background">
+        <input type="image" src="{% static 'home/Logotype_yellow.png' %}" alt="Epiroc Logo" style="border-width:0px;">
+        <span id="ucHeaderId_lblHeader" class="LabelBoldHeaderCss">EITC TECH FORM</span>
+    </div>
+<hr>
+    <h1>Welcome !</h1>
 
     {% if user.is_authenticated %}
         <p>Logged in as {{ user.username }}</p>
@@ -14,6 +21,9 @@
         <p><a href="{% url 'signup' %}">Sign Up</a></p>
         <p><a href="{% url 'login' %}">Log In</a></p>
     {% endif %}
+    <div class="footer-note">
+        <span id="ucFooterId_footer">Web application developed and maintained by CMTEC.</span>
+    </div>
     
 </body>
 </html>
