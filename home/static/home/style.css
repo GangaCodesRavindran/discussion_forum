@@ -1,4 +1,4 @@
-/* Existing CSS... */
+/* General styling */
 .container {
     display: flex;
     align-items: center;
@@ -53,7 +53,8 @@ footer {
 
 .center-image {
     display: inline-block;
-
+    max-width: 100%;
+    height: auto;
 }
 
 .image-with-text {
@@ -65,7 +66,6 @@ footer {
     height: 200px;
     cursor: pointer;
     display: block;
-
 }
 
 .footer-note {
@@ -78,7 +78,6 @@ footer {
     padding: 10px 0;
     font-family: Cambria;
 }
-
 
 .container_class {
     width: 80%;
@@ -113,7 +112,6 @@ footer {
     color: #333;
 }
 
-
 h1 {
     margin-top: 20px;
     font-size: 2em;
@@ -145,4 +143,59 @@ li {
 
 li h2 {
     margin-top: 0;
+}
+
+/* New styles for index page */
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 140px);
+}
+
+.left-side {
+    flex: 1;
+    text-align: center;
+}
+
+.right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.vertical-line {
+    width: 1px;
+    background-color: #ccc;
+    height: 80vh;
+    margin: 0 20px;
+}
+
+.redirect-button {
+    width: 250px; /* Set desired button width */
+    height: 60px; /* Set desired button height */
+    background-color: #f0f0f0;
+    color: #333;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    text-decoration: none;
+}
+
+.redirect-button img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.redirect-button:hover {
+    background-color: #ddd;
 }
