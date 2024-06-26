@@ -175,8 +175,8 @@ li h2 {
 }
 
 .redirect-button {
-    width: 250px; /* Set desired button width */
-    height: 60px; /* Set desired button height */
+    width: 250px;
+    height: 60px;
     background-color: #f0f0f0;
     color: #333;
     border: 2px solid #ccc;
