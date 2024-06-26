@@ -11,7 +11,19 @@
         <input type="image" src="{% static 'home/Logotype_yellow.png' %}" alt="Epiroc Logo" style="border-width:0px;">
         <span id="ucHeaderId_lblHeader" class="LabelBoldHeaderCss">EITC TECH FORM</span>
     </div>
+    {% if user.is_authenticated %}
+        <div class="profile-container dropdown">
+            <img src="{% static 'home/profileid.png' %}" alt="Profile Image" class="profile-image" width="70" height="70">
+            <div class="dropdown-content">
+                <p>User: {{ user.username }}</p>
+                <p>Email: {{ user.email }}</p>
+                <hr>
+                <p><a href="{% url 'logout' %}">Logout</a></p>
+            </div>
+        </div>
+    {% endif %}
 <hr>
+
 
     <h2>About Epiroc</h2>
     <p>Epiroc AB is a Swedish manufacturer of mining and infrastructure equipment. It is headquartered in Stockholm, Sweden and has its manufacturing facilities in Sweden, the United States, Canada, Australia, China, India, Japan, and Germany.</p>

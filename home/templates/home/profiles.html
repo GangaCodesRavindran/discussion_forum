@@ -10,6 +10,17 @@
         <input type="image" src="{% static 'home/Logotype_yellow.png' %}" alt="Epiroc Logo" style="border-width:0px;">
         <span id="ucHeaderId_lblHeader" class="LabelBoldHeaderCss">EITC TECH FORM</span>
     </div>
+    {% if user.is_authenticated %}
+        <div class="profile-container dropdown">
+            <img src="{% static 'home/profileid.png' %}" alt="Profile Image" class="profile-image" width="70" height="70">
+            <div class="dropdown-content" >
+                <p>user: {{ user.username }}</p>
+                <p>ID: {{ user.email }}</p>
+                <hr>
+                <p><a href="{% url 'logout' %}">Logout</a></p>
+            </div>
+        </div>
+    {% endif %}
 
     <div class="container_class">
         <div id="profiles_id">
@@ -55,9 +66,7 @@
         <a href="{% url 'home' %}">Home</a> |
         <a href="{% url 'contact' %}">Contact</a> |
         <a href="{% url 'about' %}">About</a>
-        <p><a href="{% url 'logout' %}">Logout</a></p>
-
-    </footer>
+     </footer>
 
     <div class="footer-note">
         <span id="ucFooterId_footer">Web application developed and maintained by CMTEC.</span>
