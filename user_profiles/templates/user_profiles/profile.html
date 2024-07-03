@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile page</title>
+</head>
+<body>
+<h2>{{ user_profile.user.username }}'s Profile</h2>
+<h3>Skills:</h3>
+<ul>
+    {% for skill in skills %}
+        <li>{{ skill.name }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'upload_resume' %}">Upload Resume</a>
+
+
+</body>
+</html>
