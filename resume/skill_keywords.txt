@@ -1,0 +1,88 @@
+Python
+Java
+C++
+JavaScript
+Ruby
+PHP
+Swift
+Kotlin
+TypeScript
+Rust
+MATLAB
+HTML5
+CSS3
+CSS
+React.js
+Angular
+Vue.js
+Node.js
+Express.js
+Django
+Flask
+iOS Development
+Swift
+ObjectiveC
+Android Development
+Java
+Kotlin
+React Native
+Flutter
+SQL
+MySQL
+PostgreSQL
+SQLite
+NoSQL
+MongoDB
+Redis
+Amazon Web Services
+AWS
+Microsoft Azure
+Google Cloud Platform
+GCP
+Docker
+Kubernetes
+Jenkins
+Ansible
+Terraform
+Git
+SVN
+Hadoop
+Spark
+Kafka
+TensorFlow
+PyTorch
+Scikit-learn
+Natural Language Processing
+Ethical Hacking
+Network Security
+Penetration Testing
+Linux
+Windows Server
+MacOS
+Selenium
+JUnit
+TestNG
+Adobe XD
+Sketch
+Figma
+Ethereum
+Solidity
+Arduino
+RaspberryPi
+MQTT
+Zigbee
+Bluetooth Low Energy
+Pandas
+NumPy
+MATLAB
+Unity
+Unreal Engine
+RESTful APIs
+GraphQL
+Virtualization
+VMware
+VirtualBox
+Bash Scripting
+Web Servers
+Apache
+Nginx

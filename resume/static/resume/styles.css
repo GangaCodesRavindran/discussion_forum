@@ -1,0 +1,81 @@
+/* Add this to your existing CSS file */
+
+/* .top_background {
+    background-color: #425563;
+    border-color: #425563;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.top_background input[type="image"] {
+    border-width: 0px;
+}
+
+.top_background .LabelBoldHeaderCss {
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    flex-grow: 1;
+} */
+
+.top-background {
+    background-color: #425563;
+    border-color: #425563;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.upload-resume-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.upload-resume-container h2, .upload-resume-container h3 {
+    font-family: sans-serif;
+    color: #333;
+}
+
+.upload-resume-container form {
+    margin-bottom: 20px;
+}
+
+.upload-resume-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.upload-resume-container li {
+    background-color: #e9ecef;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+footer {
+    /* position: fixed; */
+    bottom: 50px;
+    right: 10px;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    font-family: Cambria;
+}
+
+.footer-note {
+    /* position: fixed; */
+    bottom: 10px;
+    width: 96%;
+    text-align: center;
+    background-color: #425563;
+    color: white;
+    padding: 10px 0;
+    font-family: Cambria;
+}

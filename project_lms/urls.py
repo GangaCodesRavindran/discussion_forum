@@ -26,6 +26,7 @@ urlpatterns = [
     path('api/', include('home.urls')),
     path('api/', include('user_profile.urls')),
     path('profile/', include('user_profile.urls')),
+    path('resume/', include('resume.urls')),
     # path('profile/', include('user_profile.urls')),
 
 ]

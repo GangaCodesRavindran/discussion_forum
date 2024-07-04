@@ -13,4 +13,5 @@ urlpatterns = [
     path('api/profiles/<int:pk>/', UserProfileDetail.as_view(), name='userprofile-detail'),
     path('api/skills/', UserSkillCreate.as_view(), name='userskill-create'),
     path('api/skills/<int:pk>/', UserSkillUpdateDelete.as_view(), name='userskill-update-delete'),
+    path('export_report/', views.export_report, name='export_report'),
 ]

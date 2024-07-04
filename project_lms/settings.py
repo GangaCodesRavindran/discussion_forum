@@ -49,7 +49,8 @@ EXTERNAL_APPS = [
     'learning_vid',
     'user_profile',
     'crispy_forms',
-    'crispy_bootstrap5'
+    'crispy_bootstrap5',
+    'resume'
     ]
 
 

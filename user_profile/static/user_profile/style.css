@@ -1,6 +1,5 @@
 /* user_profile\static\user_profile */
 
-
 body {
     font-family: Arial, sans-serif;
 }
@@ -151,7 +150,7 @@ li {
 }
 
 footer {
-    position: fixed;
+    /* position: fixed; */
     bottom: 50px;
     right: 10px;
     font-size: 20px;
@@ -161,7 +160,7 @@ footer {
 }
 
 .footer-note {
-    position: fixed;
+    /* position: fixed; */
     bottom: 10px;
     width: 96%;
     text-align: center;
@@ -169,4 +168,30 @@ footer {
     color: white;
     padding: 10px 0;
     font-family: Cambria;
+}
+
+
+/* user_profile/static/user_profile/style.css */
+
+.export-buttons {
+    margin: 20px 0;
+}
+
+.export-buttons a {
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #425563;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: sans-serif;
+}
+
+.export-buttons a:hover {
+    background-color: #f0ad4e;
+}
+
+
+.resume-upload {
+    margin: 20px;
 }

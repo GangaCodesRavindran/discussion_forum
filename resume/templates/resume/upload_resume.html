@@ -1,0 +1,60 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Resume</title>
+</head>
+<body>
+    <h1>Upload Your Resume</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Resume</title>
+    <link rel="stylesheet" href="{% static 'user_profile/style.css' %}">
+</head>
+<body>
+    <div class="top_background">
+        <input type="image" src="{% static 'home/Logotype_yellow.png' %}" alt="Epiroc Logo">
+        <span class="LabelBoldHeaderCss">EITC TECH FORUM</span>
+    </div>
+
+    <div class="upload-resume-container">
+        <h2>Upload Resume</h2>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Upload</button>
+        </form>
+
+        {% if skills %}
+            <h3>Extracted Skills:</h3>
+            <ul>
+                {% for skill in skills %}
+                    <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+    <footer>
+        <a href="/api/">Home</a> |
+        <a href="/api/contact/">Contact</a> |
+        <a href="/api/about/">About</a> |
+        <a href="/logout/">Logout</a>
+    </footer>
+    <div class="footer-note">
+        <span>Web application developed and maintained by EITC.</span>
+    </div>
+</body>
+</html>

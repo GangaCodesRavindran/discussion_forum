@@ -1,75 +1,5 @@
 <!-- user_profile\templates\user_profile\profiles.html -->
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profiles</title>
-    <link rel="stylesheet" href="{% static 'user_profile/style.css' %}">
-    <style>
-        .highlight {
-            background-color: yellow;
-        }
-    </style>
-</head>
-<body>
-    <div class="top_background" style="background-color: #425563; border-color: #425563; display: flex; align-items: center; padding: 20px;">
-        <input type="image" src="{% static 'home/Logotype_yellow.png' %}" alt="Epiroc Logo" style="border-width:0px;">
-        <span id="ucHeaderId_lblHeader" class="LabelBoldHeaderCss" style="color: white; font-family: sans-serif; font-weight: bold; text-align: center; font-size: 40px; flex-grow: 1;">
-            EITC TECH FORUM
-        </span>
-    </div>
-    <div class="search-bar">
-        <form method="GET" action="{% url 'profiles' %}">
-            <input type="text" name="skill" value="{{ skill_query }}" placeholder="Search by skill name">
-            <input type="text" name="level" value="{{ level_query }}" placeholder="Search by skill level">
-            <button type="submit">Search</button>
-        </form>
-    </div>
-
-    <div class="profiles-container">
-        {% for user in users %}
-            <div class="profile-tile">
-                <h3>{{ user.first_name }} {{ user.last_name }}</h3>
-                <ul>
-                    {% for skill in user.skills.all %}
-                        <li>
-                            {% if skill.name|lower == skill_query|lower %}
-                                <span class="highlight">{{ skill.name }}</span>
-                            {% else %}
-                                {{ skill.name }}
-                            {% endif %}
-                            - 
-                            {% if skill.level|lower == level_query|lower %}
-                                <span class="highlight">{{ skill.level }}</span>
-                            {% else %}
-                                {{ skill.level }}
-                            {% endif %}
-                        </li>
-                        <a href="{% url 'update_skill' skill.id %}" style="font-size: small;">Update</a> |
-                        <a href="{% url 'delete_skill' skill.id %}" style="font-size: small;">Delete</a>
-                    {% endfor %}
-                </ul>
-                <button class="add-skill-button" onclick="location.href='{% url 'add_skill' user.id %}'">Add Skills</button>
-            </div>
-        {% endfor %}
-    </div>
-    <footer style="bottom: 50px; right: 10px; font-size: 20px; color: black; font-weight: bold; font-family: Cambria;">
-        <a href="/api/">Home</a> |
-        <a href="/api/contact/">Contact</a> |
-        <a href="/api/about/">About</a> |
-        <a href="/logout/">Logout</a>
-    </footer>
-
-    <div class="footer-note" style="bottom: 10px; width: 96%; text-align: center; background-color: #425563; color: white; padding: 10px 0; font-family: Cambria;">
-        <span id="ucFooterId_footer">Web application developed and maintained by EITC.</span>
-    </div>
-</body>
-</html> -->
-
-<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,78 +24,10 @@
         </form>
     </div>
 
-    <div class="profiles-container">
-        {% for user in users %}
-            <div class="profile-tile">
-                <h3>{{ user.first_name }} {{ user.last_name }}</h3>
-                <ul>
-                    {% for skill in user.skills.all %}
-                        <li class="skill-item">
-                            <span class="skill-text">
-                                {% if skill.name|lower == skill_query|lower %}
-                                    <span class="highlight">{{ skill.name }}</span>
-                                {% else %}
-                                    {{ skill.name }}
-                                {% endif %}
-                                - 
-                                {% if skill.level|lower == level_query|lower %}
-                                    <span class="highlight">{{ skill.level }}</span>
-                                {% else %}
-                                    {{ skill.level }}
-                                {% endif %}
-                            </span>
-                            <div class="icon-buttons">
-                                <button class="icon-button" onclick="location.href='{% url 'update_skill' skill.id %}'">
-                                    <img src="{% static 'user_profile/update.png' %}" alt="Update" class="icon">
-                                </button>
-                                <button class="icon-button" onclick="location.href='{% url 'delete_skill' skill.id %}'">
-                                    <img src="{% static 'user_profile/delete.png' %}" alt="Delete" class="icon">
-                                </button>
-                            </div>
-                        </li>
-                    {% endfor %}
-                </ul>
-                <button class="add-skill-button" onclick="location.href='{% url 'add_skill' user.id %}'">Add Skills</button>
-            </div>
-        {% endfor %}
-    </div>
-    <footer>
-        <a href="/api/">Home</a> |
-        <a href="/api/contact/">Contact</a> |
-        <a href="/api/about/">About</a> |
-        <a href="/logout/">Logout</a>
-    </footer>
-
-    <div class="footer-note">
-        <span id="ucFooterId_footer">Web application developed and maintained by EITC.</span>
-    </div>
-</body>
-</html> -->
-
-
-<!-- Add, update, delete skill visible just for logged in user  -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profiles</title>
-    <link rel="stylesheet" href="{% static 'user_profile/style.css' %}">
-</head>
-<body>
-    <div class="top-background">
-        <input type="image" src="{% static 'home/Logotype_yellow.png' %}" alt="Epiroc Logo" class="logo">
-        <span id="ucHeaderId_lblHeader" class="LabelBoldHeaderCss header-text">
-            EITC TECH FORUM
-        </span>
-    </div>
-    <div class="search-bar">
-        <form method="GET" action="{% url 'profiles' %}">
-            <input type="text" name="skill" value="{{ skill_query }}" placeholder="Search by skill name">
-            <input type="text" name="level" value="{{ level_query }}" placeholder="Search by skill level">
-            <button type="submit">Search</button>
-        </form>
+    <div class="export-buttons">
+        <a href="{% url 'export_report' %}?format=csv">Export CSV</a>
+        <a href="{% url 'export_report' %}?format=pdf">Export PDF</a>
+        <a href="{% url 'export_report' %}?format=doc">Export DOC</a>
     </div>
 
     <div class="profiles-container">
@@ -206,6 +68,9 @@
                 {% endif %}
             </div>
         {% endfor %}
+    </div>
+    <div class="resume-upload">
+        <a href="{% url 'upload_resume' %}">Upload Resume</a>
     </div>
     <footer>
         <a href="/api/">Home</a> |
