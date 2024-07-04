@@ -86,3 +86,25 @@ Bash Scripting
 Web Servers
 Apache
 Nginx
+Python
+SQL
+CuTest
+Windows 7
+Linux
+JIRA
+GIT
+HgTortoise
+Azure DevOps
+Core Java
+Python
+SQL
+Selenium WebDriver
+Maven
+JUnit
+Robot Framework
+JIRA
+TFS
+ALM
+GIT
+Azure DevOps
+Work soft Certify
