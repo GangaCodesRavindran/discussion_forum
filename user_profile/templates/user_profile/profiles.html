@@ -10,12 +10,24 @@
     <link rel="stylesheet" href="{% static 'user_profile/style.css' %}">
 </head>
 <body>
-    <div class="top-background">
-        <input type="image" src="{% static 'home/Logotype_yellow.png' %}" alt="Epiroc Logo" class="logo">
-        <span id="ucHeaderId_lblHeader" class="LabelBoldHeaderCss header-text">
-            EITC TECH FORUM
-        </span>
+{% load static %}
+<div class="top_background">
+        <input type="image" src="{% static 'home/Logotype_yellow.png' %}" alt="Epiroc Logo" style="border-width:0px;">
+        <span id="ucHeaderId_lblHeader" class="LabelBoldHeaderCss">EITC TECH FORUM</span>
     </div>
+
+    {% if user.is_authenticated %}
+    <div class="profile-container dropdown">
+        <img src="{% static 'home/profileid.png' %}" alt="Profile Image" class="profile-image" width="70" height="70">
+        <div class="dropdown-content" >
+            <p>user: {{ user.username }}</p>
+            <p>ID: {{ user.email }}</p>
+            <hr>
+            <p><a href="{% url 'logout' %}">Logout</a></p>
+        </div>
+    </div>
+    {% endif %}
+<hr>
     <div class="search-bar">
         <form method="GET" action="{% url 'profiles' %}">
             <input type="text" name="skill" value="{{ skill_query }}" placeholder="Search by skill name">
@@ -75,8 +87,7 @@
     <footer>
         <a href="/api/">Home</a> |
         <a href="/api/contact/">Contact</a> |
-        <a href="/api/about/">About</a> |
-        <a href="/logout/">Logout</a>
+        <a href="/api/about/">About</a>
     </footer>
 
     <div class="footer-note">

@@ -1,17 +1,31 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
     <link rel="stylesheet" href="{% static 'login/style.css' %}">
     <title>Login Page</title>
 </head>
 <body>
-    <div class="top_background">
-        <img src="{% static 'home/Logotype_yellow.png' %}" alt="Epiroc Logo">
-        <div class="LabelBoldHeaderCss">EITC TECH FORUM</div>
+{% load static %}
+<div class="top_background">
+        <input type="image" src="{% static 'home/Logotype_yellow.png' %}" alt="Epiroc Logo" style="border-width:0px;">
+        <span id="ucHeaderId_lblHeader" class="LabelBoldHeaderCss">EITC TECH FORUM</span>
     </div>
+
+    {% if user.is_authenticated %}
+    <div class="profile-container dropdown">
+        <img src="{% static 'home/profileid.png' %}" alt="Profile Image" class="profile-image" width="70" height="70">
+        <div class="dropdown-content" >
+            <p>user: {{ user.username }}</p>
+            <p>ID: {{ user.email }}</p>
+            <hr>
+            <p><a href="{% url 'logout' %}">Logout</a></p>
+        </div>
+    </div>
+    {% endif %}
+<hr>
     <div class="main-container">
         <div class="left-side">
             <img src="{% static 'login/bg_login.png' %}" alt="Mining Truck">

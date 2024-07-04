@@ -7,8 +7,27 @@
 
     <meta charset="UTF-8">
     <title>Update Skill</title>
+    <link rel="stylesheet" href="{% static 'user_profile/style.css' %}">
 </head>
 <body>
+{% load static %}
+<div class="top_background">
+        <input type="image" src="{% static 'home/Logotype_yellow.png' %}" alt="Epiroc Logo" style="border-width:0px;">
+        <span id="ucHeaderId_lblHeader" class="LabelBoldHeaderCss">EITC TECH FORUM</span>
+    </div>
+
+    {% if user.is_authenticated %}
+    <div class="profile-container dropdown">
+        <img src="{% static 'home/profileid.png' %}" alt="Profile Image" class="profile-image" width="70" height="70">
+        <div class="dropdown-content" >
+            <p>user: {{ user.username }}</p>
+            <p>ID: {{ user.email }}</p>
+            <hr>
+            <p><a href="{% url 'logout' %}">Logout</a></p>
+        </div>
+    </div>
+    {% endif %}
+<hr>
     <h2>Update Skill</h2>
     <form method="post">
         {% csrf_token %}
@@ -19,5 +38,14 @@
         <button type="submit">Update</button>
         <a href="{% url 'profiles' %}">Cancel</a>
     </form>
+<footer>
+        <a href="/api/">Home</a> |
+        <a href="/api/contact/">Contact</a> |
+        <a href="/api/about/">About</a>
+    </footer>
+
+    <div class="footer-note">
+        <span id="ucFooterId_footer">Web application developed and maintained by EITC.</span>
+    </div>
 </body>
 </html>

@@ -79,3 +79,334 @@ footer {
     padding: 10px 0;
     font-family: Cambria;
 }
+
+/* user_profile\static\user_profile */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin: 5px 0 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+@media (min-width: 600px) {
+    input[type="text"], select, button {
+        width: 50%;
+    }
+}
+
+.profiles-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.profile-tile {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+}
+
+.add-skill-button {
+    background-color: rgb(133, 133, 174);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: small;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.add-skill-button:hover {
+    background-color: rgb(48, 48, 127);
+}
+
+
+
+/* New styles for skill items and icons */
+.highlight {
+    background-color: yellow;
+}
+
+.icon-button {
+    background:none;
+    border:none;
+    cursor: pointer;
+    margin: inherit;
+}
+
+
+.icon-button.delete:hover {
+    background-color: red;
+}
+
+
+.icon-button.update:hover {
+    background-color: rgb(71, 71, 71);
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+}
+
+.skill-item {
+    background-color: #f0f0f0;
+    padding: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill-text {
+    flex-grow: 1;
+    font-size: small;
+
+}
+
+.icon-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.top-background {
+    background-color: #425563;
+    border-color: #425563;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    border-width: 0px;
+}
+
+.header-text {
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    flex-grow: 1;
+}
+
+footer {
+    /* position: fixed; */
+    bottom: 50px;
+    right: 10px;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    font-family: Cambria;
+}
+
+.footer-note {
+    /* position: fixed; */
+    bottom: 10px;
+    width: 96%;
+    text-align: center;
+    background-color: #425563;
+    color: white;
+    padding: 10px 0;
+    font-family: Cambria;
+}
+
+
+/* user_profile/static/user_profile/style.css */
+
+.export-buttons {
+    margin: 20px 0;
+}
+
+.export-buttons a {
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #425563;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: sans-serif;
+}
+
+.export-buttons a:hover {
+    background-color: #f0ad4e;
+}
+
+
+.resume-upload {
+    margin: 20px;
+}
+
+
+/* Profile image and user info */
+.profile-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white; /*#425563*/
+    color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    border-radius: 5px;
+    right: 0;
+    width: auto;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    width: auto;
+}
+
+.dropdown-content p {
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    text-align: left;
+    font-size: 16px;
+    width: auto;
+}
+
+/* Additional styles for header and footer */
+.top_background {
+    background-color: #425563;
+    border-color: #425563;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.LabelBoldHeaderCss {
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    flex-grow: 1;
+}
+
+footer {
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    font-family: Cambria;
+}
+
+.center-image {
+    display: inline-block;
+
+}
+
+.image-with-text {
+    text-align: center;
+}
+
+.clickable-image {
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    display: block;
+
+}
+
+.footer-note {
+    position: fixed;
+    bottom: 10px;
+    width: 96%;
+    text-align: center;
+    background-color: #425563;
+    color: white;
+    padding: 10px 0;
+    font-family: Cambria;
+}
+
+
+.container_class {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+#profiles_id {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.profile_class {
+    background: #fff;
+    border: 1px #ccc solid;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.profile_class h2 {
+    margin-top: 0;
+}
+
+.profile_class p {
+    font-size: 16px;
+    color: #333;
+}

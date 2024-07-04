@@ -163,3 +163,47 @@ footer {
     font-family: "Raleway";
     src: url('Raleway.ttf');
 }
+
+
+
+/* Profile image and user info */
+.profile-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white; /*#425563*/
+    color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    border-radius: 5px;
+    right: 0;
+    width: auto;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    width: auto;
+}
+
+.dropdown-content p {
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    text-align: left;
+    font-size: 16px;
+    width: auto;
+}
