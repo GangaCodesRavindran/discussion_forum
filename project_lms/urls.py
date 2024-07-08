@@ -16,17 +16,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('disc_forum/', include('disc_forum.urls')),
-    path('videos/', include('learning_vid.urls')),
-    path('home/', include('home.urls')),
+    path('learning_vid/', include('learning_vid.urls')),
     path('', include('login.urls')),
     path('api/', include('home.urls')),
-    path('api/', include('user_profile.urls')),
     path('profile/', include('user_profile.urls')),
     path('resume/', include('resume.urls')),
-    # path('profile/', include('user_profile.urls')),
-
+    path('my_video/', include('my_video.urls')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

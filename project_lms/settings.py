@@ -50,7 +50,8 @@ EXTERNAL_APPS = [
     'user_profile',
     'crispy_forms',
     'crispy_bootstrap5',
-    'resume'
+    'resume',
+    'my_video',
     ]
 
 
@@ -186,3 +187,9 @@ AUTHENTICATION_BACKENDS = [
 
 
 LOGIN_URL = '/login/'
+
+
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')

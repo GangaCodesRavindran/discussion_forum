@@ -28,6 +28,8 @@
         <a href="{% url 'export_report' %}?format=csv">Export CSV</a>
         <a href="{% url 'export_report' %}?format=pdf">Export PDF</a>
         <a href="{% url 'export_report' %}?format=doc">Export DOC</a>
+        <a href="{% url 'upload_resume' %}">Upload Resume</a>
+
     </div>
 
     <div class="profiles-container">
@@ -69,9 +71,9 @@
             </div>
         {% endfor %}
     </div>
-    <div class="resume-upload">
+    <!-- <div class="resume-upload">
         <a href="{% url 'upload_resume' %}">Upload Resume</a>
-    </div>
+    </div> -->
     <footer>
         <a href="/api/">Home</a> |
         <a href="/api/contact/">Contact</a> |

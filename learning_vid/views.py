@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
 @login_required
-def videos(request):
+def learning_vid(request):
     return render(request, 'learning_vid/videos.html')
 
 @login_required

@@ -1,6 +1,5 @@
 # login/views.py
 
-from .models import Employee
 from datetime import datetime
 from django.shortcuts import HttpResponse, render, redirect
 from django.contrib.auth import login, authenticate
@@ -45,18 +44,6 @@ def user_login(request):
         form = LoginForm()
     return render(request, 'login/index.html', {'form': form})
 
-def employee_delete(request, id):
-    employee = Employee.objects.get(id=id)
-    employee.delete()
-    return redirect('/employee_list')
-
-def employee_list(request):
-    context = {'employee_list': Employee.objects.all()}
-    return render(request, "login/employee_list.html", context)
-
-def employee_update(request, id):
-    employee = Employee.objects.get(id=id)
-    return redirect('/employee_list')
 
 @login_required
 def home(request):
@@ -69,3 +56,4 @@ def forum_redirect(request):
 @login_required
 def videos_redirect(request):
     return redirect('videos')
+
