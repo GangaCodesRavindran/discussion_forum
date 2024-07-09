@@ -1,3 +1,27 @@
+/* Styles for the video player and container */
+.container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-container {
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 800px;
+}
+
+.text-center {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.embed-responsive {
+    width: 100%;
+    height: auto;
+}
+
+
 /* Existing CSS... */
 .container {
     display: flex;
@@ -7,20 +31,18 @@
 }
 
 .back-button {
-    padding: 10px 20px;
-    background-color: green;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 5px;
+    width: 10%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin: 5px 0 20px;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    border: 2px solid black;
-    font-family: Brush Script;
 }
 
 .back-button:hover {
-    background-color: blue;
+    background-color: #45a049;
 }
 
 /* Additional styles for header and footer */
@@ -42,7 +64,7 @@
 }
 
 footer {
-    position: fixed;
+    /* position: fixed; */
     bottom: 50px;
     right: 10px;
     font-size: 20px;
@@ -69,7 +91,7 @@ footer {
 }
 
 .footer-note {
-    position: fixed;
+    /* position: fixed; */
     bottom: 10px;
     width: 96%;
     text-align: center;
@@ -189,3 +211,4 @@ li h2 {
     font-size: 16px;
     width: auto;
 }
+

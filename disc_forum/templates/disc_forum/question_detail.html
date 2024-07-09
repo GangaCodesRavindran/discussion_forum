@@ -4,13 +4,27 @@
 <head>
     {% load static %}
     <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'disc_forum/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
 </head>
 <body>
     <div class="top_background">
-        <input type="image" src="{% static 'disc_forum/Logotype_yellow.png' %}" alt="Epiroc Logo" style="border-width:0px;">
+        <a type="image" href="{% url 'home' %}"  style="border-width:0px;">
+            <img src="{% static 'home/Logotype_yellow.png' %}">
+        </a>
         <span id="ucHeaderId_lblHeader" class="LabelBoldHeaderCss">EITC TECH FORUM</span>
     </div>
+
+    {% if user.is_authenticated %}
+    <div class="profile-container dropdown">
+        <img src="{% static 'home/profileid.png' %}" alt="Profile Image" class="profile-image" width="70" height="70">
+        <div class="dropdown-content" >
+            <p>user: {{ user.username }}</p>
+            <p>ID: {{ user.email }}</p>
+            <hr>
+            <p><a href="{% url 'logout' %}">Logout</a></p>
+        </div>
+    </div>
+    {% endif %}
 <hr>
 <h2><strong>Query - </strong>{{ question.title }}</h2>
 <p><strong class="italic-text">Description - </strong> {{ question.content }}</p>
@@ -25,13 +39,13 @@
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="back-button">Submit</button>
-    <a href="{% url 'forum' %}" class="back-button">Back</a>
+    <button type="button" class="back-button" onclick="window.location.href='{% url 'forum' %}'">Back</button>
 </form>
 <footer>
-    <a href="{% url 'home' %}">Home</a> |
-    <a href="{% url 'contact' %}">Contact</a> |
-    <a href="{% url 'about' %}">About</a> |
-    <a href="{% url 'logout' %}">Logout</a>
+    <!-- <a href="{% url 'home' %}">Home</a> | -->
+    <a href="/api/contact/">Contact</a> |
+    <a href="/api/about/">About</a> 
+    <!-- <a href="{% url 'logout' %}">Logout</a> -->
 </footer>
 
     <div class="footer-note">

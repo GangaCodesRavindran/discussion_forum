@@ -4,11 +4,31 @@
 <html lang="en">
 <head>
     {% load static %}
-
     <meta charset="UTF-8">
-    <title>Update Skill</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Skills</title>
+    <link rel="stylesheet" href="{% static 'user_profile/styles.css' %}">
 </head>
 <body>
+    <div class="top-background">
+        <a type="image" href="{% url 'home' %}" style="border-width:0px;">
+            <img src="{% static 'home/Logotype_yellow.png' %}">
+        </a>
+        <span id="ucHeaderId_lblHeader" class="LabelBoldHeaderCss header-text">
+            EITC TECH FORUM
+        </span>
+    </div>
+    {% if user.is_authenticated %}
+    <div class="profile-container dropdown">
+        <img src="{% static 'home/profileid.png' %}" alt="Profile Image" class="profile-image" width="70" height="70">
+        <div class="dropdown-content">
+            <p>user: {{ user.username }}</p>
+            <p>ID: {{ user.email }}</p>
+            <hr>
+            <p><a href="{% url 'logout' %}">Logout</a></p>
+        </div>
+    </div>
+    {% endif %}
     <h2>Update Skill</h2>
     <form method="post">
         {% csrf_token %}
@@ -17,7 +37,18 @@
         <label for="level">Skill Level:</label>
         <input type="text" id="level" name="level" value="{{ skill.level }}"><br><br>
         <button type="submit">Update</button>
-        <a href="{% url 'profiles' %}">Cancel</a>
+        <!-- <a href="{% url 'profiles' %}">Cancel</a> -->
+        <button type="button" class="button" onclick="window.location.href='{% url 'profiles' %}'">Cancel</button>
+
+        
     </form>
+    <footer>
+        <a href="/api/contact/">Contact</a> |
+        <a href="/api/about/">About</a>
+    </footer>
+
+    <div class="footer-note">
+        <span id="ucFooterId_footer">Web application developed and maintained by EITC.</span>
+    </div>
 </body>
 </html>

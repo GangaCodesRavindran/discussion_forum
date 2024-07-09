@@ -51,11 +51,3 @@ def question_detail(request, pk):
     else:
         form = AnswerForm()
     return render(request, 'disc_forum/question_detail.html', {'question': question, 'form': form})
-
-@login_required
-def about(request):
-    return render(request, 'disc_forum/about.html')
-
-@login_required
-def contact(request):
-    return render(request, 'disc_forum/contact.html')

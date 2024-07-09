@@ -1,13 +1,14 @@
-/* user_profile\static\user_profile */
-
+/* General body styling */
 body {
     font-family: Arial, sans-serif;
 }
 
+/* Centered header */
 h1 {
     text-align: center;
 }
 
+/* Styling for input fields and select dropdowns */
 input[type="text"], select {
     width: 100%;
     padding: 10px;
@@ -18,6 +19,7 @@ input[type="text"], select {
     box-sizing: border-box;
 }
 
+/* General button styling */
 button {
     width: 100%;
     background-color: #4CAF50;
@@ -29,31 +31,37 @@ button {
     cursor: pointer;
 }
 
+/* Button hover effect */
 button:hover {
     background-color: #45a049;
 }
 
+/* Remove list styling and padding */
 ul {
     list-style-type: none;
     padding: 0;
 }
 
+/* List item margin */
 li {
     margin: 10px 0;
 }
 
+/* Responsive styling for inputs, selects, and buttons on larger screens */
 @media (min-width: 600px) {
     input[type="text"], select, button {
-        width: 50%;
+        width: 10%;
     }
 }
 
+/* Container for profile tiles */
 .profiles-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
+/* Styling for individual profile tiles */
 .profile-tile {
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -62,6 +70,7 @@ li {
     text-align: center;
 }
 
+/* Styling for the "Add Skills" button */
 .add-skill-button {
     background-color: rgb(133, 133, 174);
     color: white;
@@ -73,41 +82,45 @@ li {
     font-size: small;
     margin: 4px 2px;
     cursor: pointer;
+    width: 50%;
 }
 
+/* Hover effect for the "Add Skills" button */
 .add-skill-button:hover {
     background-color: rgb(48, 48, 127);
 }
 
-
-
-/* New styles for skill items and icons */
+/* Highlighted text */
 .highlight {
     background-color: yellow;
 }
 
+/* General styling for icon buttons */
 .icon-button {
-    background:none;
-    border:none;
+    background: none;
+    border: none;
     cursor: pointer;
     margin: inherit;
+    width: 50%;
 }
 
-
+/* Hover effect for delete icon buttons */
 .icon-button.delete:hover {
     background-color: red;
 }
 
-
+/* Hover effect for update icon buttons */
 .icon-button.update:hover {
     background-color: rgb(71, 71, 71);
 }
 
+/* Icon dimensions */
 .icon {
     width: 16px;
     height: 16px;
 }
 
+/* Styling for skill items */
 .skill-item {
     background-color: #f0f0f0;
     padding: 5px;
@@ -117,17 +130,19 @@ li {
     align-items: center;
 }
 
+/* Skill text styling */
 .skill-text {
     flex-grow: 1;
     font-size: small;
-
 }
 
+/* Container for icon buttons */
 .icon-buttons {
     display: flex;
     gap: 10px;
 }
 
+/* Styling for the top background area */
 .top-background {
     background-color: #425563;
     border-color: #425563;
@@ -136,10 +151,12 @@ li {
     padding: 20px;
 }
 
+/* Remove border for logo image */
 .logo {
     border-width: 0px;
 }
 
+/* Styling for header text */
 .header-text {
     color: white;
     font-family: sans-serif;
@@ -149,6 +166,7 @@ li {
     flex-grow: 1;
 }
 
+/* Footer styling */
 footer {
     /* position: fixed; */
     bottom: 50px;
@@ -159,6 +177,7 @@ footer {
     font-family: Cambria;
 }
 
+/* Footer note styling */
 .footer-note {
     /* position: fixed; */
     bottom: 10px;
@@ -170,13 +189,12 @@ footer {
     font-family: Cambria;
 }
 
-
-/* user_profile/static/user_profile/style.css */
-
+/* Container for export buttons */
 .export-buttons {
     margin: 20px 0;
 }
 
+/* Styling for individual export buttons */
 .export-buttons a {
     margin-right: 10px;
     padding: 10px 20px;
@@ -187,11 +205,58 @@ footer {
     font-family: sans-serif;
 }
 
+/* Hover effect for export buttons */
 .export-buttons a:hover {
     background-color: #f0ad4e;
 }
 
-
+/* Container for the resume upload section */
 .resume-upload {
     margin: 20px;
+}
+
+/* Profile container positioning */
+.profile-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Styling for profile images */
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Dropdown content styling */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    border-radius: 5px;
+    right: 0;
+    width: auto;
+}
+
+/* Show dropdown content on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+    width: auto;
+}
+
+/* Dropdown content paragraph styling */
+.dropdown-content p {
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    text-align: left;
+    font-size: 16px;
+    width: auto;
 }

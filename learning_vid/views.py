@@ -6,12 +6,12 @@ from django.contrib.auth.decorators import login_required
 def learning_vid(request):
     return render(request, 'learning_vid/videos.html')
 
-@login_required
-def about(request):
-    return render(request, 'learning_vid/about.html')
+# @login_required
+# def about(request):
+#     return render(request, 'learning_vid/about.html')
 
 
-@login_required
-def contact(request):
-    return render(request, 'learning_vid/contact.html')
+# @login_required
+# def contact(request):
+#     return render(request, 'learning_vid/contact.html')
 

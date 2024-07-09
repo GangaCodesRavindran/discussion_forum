@@ -5,6 +5,4 @@ urlpatterns = [
     path('forum/', views.forum, name='forum'),
     path('forum/<int:pk>/', views.question_detail, name='question_detail'),
     path('post_question/', views.post_question, name='post_question'),
-    path('about/', views.about, name='about'),
-    path('contact/', views.contact, name='contact'),
 ]

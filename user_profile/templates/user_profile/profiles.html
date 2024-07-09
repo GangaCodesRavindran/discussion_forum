@@ -1,4 +1,4 @@
-<!-- user_profile\templates\user_profile\profiles.html -->
+<!-- user_profile/templates/user_profile/profiles.html -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,15 +7,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profiles</title>
-    <link rel="stylesheet" href="{% static 'user_profile/style.css' %}">
+    <link rel="stylesheet" href="{% static 'user_profile/styles.css' %}">
 </head>
 <body>
     <div class="top-background">
-        <input type="image" src="{% static 'home/Logotype_yellow.png' %}" alt="Epiroc Logo" class="logo">
+        <a type="image" href="{% url 'home' %}" style="border-width:0px;">
+            <img src="{% static 'home/Logotype_yellow.png' %}">
+        </a>
         <span id="ucHeaderId_lblHeader" class="LabelBoldHeaderCss header-text">
             EITC TECH FORUM
         </span>
     </div>
+    {% if user.is_authenticated %}
+    <div class="profile-container dropdown">
+        <img src="{% static 'home/profileid.png' %}" alt="Profile Image" class="profile-image" width="70" height="70">
+        <div class="dropdown-content">
+            <p>user: {{ user.username }}</p>
+            <p>ID: {{ user.email }}</p>
+            <hr>
+            <p><a href="{% url 'logout' %}">Logout</a></p>
+        </div>
+    </div>
+    {% endif %}
     <div class="search-bar">
         <form method="GET" action="{% url 'profiles' %}">
             <input type="text" name="skill" value="{{ skill_query }}" placeholder="Search by skill name">
@@ -23,18 +36,16 @@
             <button type="submit">Search</button>
         </form>
     </div>
-
     <div class="export-buttons">
-        <a href="{% url 'export_report' %}?format=csv">Export CSV</a>
-        <a href="{% url 'export_report' %}?format=pdf">Export PDF</a>
-        <a href="{% url 'export_report' %}?format=doc">Export DOC</a>
+        <a href="{% url 'export_report' %}?format=csv&skill={{ skill_query }}&level={{ level_query }}">Export CSV</a>
+        <a href="{% url 'export_report' %}?format=pdf&skill={{ skill_query }}&level={{ level_query }}">Export PDF</a>
+        <a href="{% url 'export_report' %}?format=doc&skill={{ skill_query }}&level={{ level_query }}">Export DOC</a>
         <a href="{% url 'upload_resume' %}">Upload Resume</a>
-
     </div>
-
     <div class="profiles-container">
         {% for user in users %}
             <div class="profile-tile">
+                <img src="{% static 'user_profile/user-photo.png' %}" alt="Profile Image" class="profile-image" width="70" height="70">
                 <h3>{{ user.first_name }} {{ user.last_name }}</h3>
                 <ul>
                     {% for skill in user.skills.all %}
@@ -71,14 +82,9 @@
             </div>
         {% endfor %}
     </div>
-    <!-- <div class="resume-upload">
-        <a href="{% url 'upload_resume' %}">Upload Resume</a>
-    </div> -->
     <footer>
-        <a href="/api/">Home</a> |
         <a href="/api/contact/">Contact</a> |
-        <a href="/api/about/">About</a> |
-        <a href="/logout/">Logout</a>
+        <a href="/api/about/">About</a>
     </footer>
 
     <div class="footer-note">
