@@ -34,7 +34,7 @@
     <hr>
     <h3>Responses:</h3>
     {% for answer in question.answers.all %}
-        <p>{{ answer.content }}</p>
+    <p><strong>{{ user.username }}</strong> : {{ answer.content }}
         <button type="button" class="back-button" onclick="window.location.href='{% url 'update_answer' answer.pk %}'">Update</button>
         <button type="button" class="back-button" onclick="window.location.href='{% url 'delete_answer' answer.pk %}'">Delete</button>
         <hr>

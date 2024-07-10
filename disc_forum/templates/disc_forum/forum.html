@@ -37,7 +37,11 @@
     <h2>Query Glossary:</h2>
     <ul class="content_test">
         {% for question in questions %}
-            <li><a href="{% url 'question_detail' question.pk %}">{{ question.title }}</a></li>
+            <li>
+                {% if user.is_authenticated %}
+                    <p><strong>{{ user.username }}:</strong> <a href="{% url 'question_detail' question.pk %}">{{ question.title }}</a></p>
+                {% endif %}
+            </li>
         {% endfor %}
     </ul>
 
