@@ -1,4 +1,4 @@
-<!-- disc_forum\templates\disc_forum\forum.html -->
+<!-- disc_forum\templates\disc_forum\confirm_delete.html -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,20 +27,12 @@
     {% endif %}
 
     <hr>
-    <h2>Post your Query</h2>
-    <form method="post" action="{% url 'forum' %}">
+    <h2>Are you sure you want to delete this {{ type }}?</h2>
+    <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="back-button">Submit</button>
+        <button type="submit" class="back-button">Confirm</button>
+        <button type="button" class="back-button" onclick="window.location.href='{% if type == 'question' %}{% url 'question_detail' object.pk %}{% else %}{% url 'question_detail' object.question.pk %}{% endif %}'">Cancel</button>
     </form>
-    <hr>
-    <h2>Query Glossary:</h2>
-    <ul class="content_test">
-        {% for question in questions %}
-            <li><a href="{% url 'question_detail' question.pk %}">{{ question.title }}</a></li>
-        {% endfor %}
-    </ul>
-
     <footer>
         <a href="/api/contact/">Contact</a> |
         <a href="/api/about/">About</a>
