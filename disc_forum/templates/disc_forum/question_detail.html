@@ -1,4 +1,4 @@
-<!-- disc_forum\templates\disc_forum\question_detail.html -->
+<!-- disc_forum/templates/disc_forum/question_detail.html -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,16 +29,31 @@
     <hr>
     <h2><strong>Query - </strong>{{ question.Keyword }}</h2>
     <p><strong class="italic-text">Description - </strong>{{ question.Description }}</p>
-    <button type="button" class="back-button" onclick="window.location.href='{% url 'update_question_detail' question.pk %}'">Update </button>
-    <button type="button" class="back-button" onclick="window.location.href='{% url 'delete_question_detail' question.pk %}'">Delete </button>
+
+    <!-- Display Attachments -->
+    {% if question.attachments.all %}
+    <h3>Attachments:</h3>
+    <ul>
+        {% for attachment in question.attachments.all %}
+        <li><a href="{{ attachment.file.url }}">{{ attachment.file.name }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <!-- Buttons for Update and Delete -->
+    <button type="button" class="back-button" onclick="window.location.href='{% url 'update_question_detail' question.pk %}'">Update</button>
+    <button type="button" class="back-button" onclick="window.location.href='{% url 'delete_question_detail' question.pk %}'">Delete</button>
+
     <hr>
     <h3>Responses:</h3>
     {% for answer in question.answers.all %}
-    <p><strong>{{ user.username }}</strong> : {{ answer.Response }}
+    <p><strong>{{ answer.user.username }}</strong> : {{ answer.Response }}
         <button type="button" class="back-button" onclick="window.location.href='{% url 'update_answer' answer.pk %}'">Update</button>
         <button type="button" class="back-button" onclick="window.location.href='{% url 'delete_answer' answer.pk %}'">Delete</button>
-        <hr>
+    </p>
+    <hr>
     {% endfor %}
+
     <h2>Post a Response</h2>
     <form method="post">
         {% csrf_token %}
@@ -46,6 +61,7 @@
         <button type="submit" class="back-button">Submit</button>
         <button type="button" class="back-button" onclick="window.location.href='{% url 'forum' %}'">Back</button>
     </form>
+
     <footer>
         <a href="/api/contact/">Contact</a> |
         <a href="/api/about/">About</a>

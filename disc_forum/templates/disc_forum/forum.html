@@ -1,10 +1,25 @@
-<!-- disc_forum\templates\disc_forum\forum.html -->
+<!-- disc_forum/templates/disc_forum/forum.html -->
 <!DOCTYPE html>
 <html>
 <head>
     {% load static %}
     <title>Discussion Forum</title>
     <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Initialize counter for attachment inputs
+            var attachmentCount = 1;
+
+            // Function to add more attachment inputs
+            $('#add-more-attachments').click(function(e) {
+                e.preventDefault();
+                attachmentCount++;
+                var newInput = '<div><label for="id_Attachment_' + attachmentCount + '">Attachment ' + attachmentCount + ':</label><input type="file" name="Attachment_' + attachmentCount + '" id="id_Attachment_' + attachmentCount + '"></div>';
+                $('#attachment-container').append(newInput);
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="top_background">
@@ -28,12 +43,20 @@
 
     <hr>
     <h2>Post your Query</h2>
-    <form method="post" action="{% url 'forum' %}">
+    <form method="post" action="{% url 'forum' %}" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
+        <div id="attachment-container">
+            <div>
+                <label for="id_Attachment">Attachment 1:</label>
+                {{ form.Attachment }}
+            </div>
+        </div>
+        <button id="add-more-attachments" class="back-button">Attachments More</button>
         <button type="submit" class="back-button">Submit</button>
     </form>
     <hr>
+
     <h2>Query Glossary:</h2>
     <ul class="content_test">
         {% for question in questions %}

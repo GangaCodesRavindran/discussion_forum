@@ -3,6 +3,7 @@ from django.db import models
 class Question(models.Model):
     Keyword = models.CharField(max_length=200)
     Description = models.TextField()
+    Attachment = models.FileField(upload_to='attachments/', null=True, blank=True)
 
     def __str__(self):
         return self.Keyword

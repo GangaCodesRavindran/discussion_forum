@@ -48,6 +48,13 @@ def update_question_detail(request, pk):
 
 @login_required
 def forum(request):
+    if request.method == 'POST':
+        form = QuestionForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('forum')  # Redirect to the forum page or any other page
+    else:
+        form = QuestionForm()
     questions = Question.objects.all()
     if request.method == 'POST':
         form = QuestionForm(request.POST)
