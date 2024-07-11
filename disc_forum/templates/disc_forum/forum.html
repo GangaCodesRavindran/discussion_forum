@@ -39,7 +39,7 @@
         {% for question in questions %}
             <li>
                 {% if user.is_authenticated %}
-                    <p><strong>{{ user.username }}:</strong> <a href="{% url 'question_detail' question.pk %}">{{ question.title }}</a></p>
+                    <p><strong>{{ user.username }}:</strong> <a href="{% url 'question_detail' question.pk %}">{{ question.Keyword }}</a></p>
                 {% endif %}
             </li>
         {% endfor %}

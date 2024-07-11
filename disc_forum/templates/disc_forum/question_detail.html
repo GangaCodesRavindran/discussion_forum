@@ -27,14 +27,14 @@
     {% endif %}
 
     <hr>
-    <h2><strong>Query - </strong>{{ question.title }}</h2>
-    <p><strong class="italic-text">Description - </strong>{{ question.content }}</p>
+    <h2><strong>Query - </strong>{{ question.Keyword }}</h2>
+    <p><strong class="italic-text">Description - </strong>{{ question.Description }}</p>
     <button type="button" class="back-button" onclick="window.location.href='{% url 'update_question_detail' question.pk %}'">Update </button>
     <button type="button" class="back-button" onclick="window.location.href='{% url 'delete_question_detail' question.pk %}'">Delete </button>
     <hr>
     <h3>Responses:</h3>
     {% for answer in question.answers.all %}
-    <p><strong>{{ user.username }}</strong> : {{ answer.content }}
+    <p><strong>{{ user.username }}</strong> : {{ answer.Response }}
         <button type="button" class="back-button" onclick="window.location.href='{% url 'update_answer' answer.pk %}'">Update</button>
         <button type="button" class="back-button" onclick="window.location.href='{% url 'delete_answer' answer.pk %}'">Delete</button>
         <hr>
