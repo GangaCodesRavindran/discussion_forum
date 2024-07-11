@@ -46,24 +46,32 @@ def update_question_detail(request, pk):
         form = QuestionForm(instance=question)
     return render(request, 'disc_forum/update_question.html', {'form': form, 'question': question})
 
-@login_required
+
+from django.shortcuts import render
+from .models import Question
+from .forms import QuestionForm, AttachmentForm
+
+
 def forum(request):
     if request.method == 'POST':
         form = QuestionForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('forum')  # Redirect to the forum page or any other page
+        attachment_form = AttachmentForm(request.POST, request.FILES)
+        if form.is_valid() and attachment_form.is_valid():
+            question = form.save()
+            attachment = attachment_form.save(commit=False)
+            attachment.question = question
+            attachment.save()
     else:
         form = QuestionForm()
+        attachment_form = AttachmentForm()
+
     questions = Question.objects.all()
-    if request.method == 'POST':
-        form = QuestionForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('forum')
-    else:
-        form = QuestionForm()
-    return render(request, 'disc_forum/forum.html', {'questions': questions, 'form': form})
+    context = {
+        'form': form,
+        'attachment_form': attachment_form,
+        'questions': questions,
+    }
+    return render(request, 'disc_forum/forum.html', context)
 
 @login_required
 def question_detail(request, pk):
