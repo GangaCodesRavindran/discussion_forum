@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Skills</title>
+    <link rel="stylesheet" href="{% static 'user_profile/styles.css' %}">
+</head>
+<body>
+    <div class="top-background">
+        <a type="image" href="{% url 'home' %}" style="border-width:0px;">
+            <img src="{% static 'home/Logotype_yellow.png' %}">
+        </a>
+        <span id="ucHeaderId_lblHeader" class="LabelBoldHeaderCss header-text">
+            EITC TECH FORUM
+        </span>
+    </div>
+    {% if user.is_authenticated %}
+    <div class="profile-container dropdown">
+        <img src="{% static 'home/profileid.png' %}" alt="Profile Image" class="profile-image" width="70" height="70">
+        <div class="dropdown-content">
+            <p>user: {{ user.username }}</p>
+            <p>ID: {{ user.email }}</p>
+            <hr>
+            <p><a href="{% url 'logout' %}">Logout</a></p>
+        </div>
+    </div>
+    {% endif %}
+<style>
+
+.header {
+         padding: 30px;
+         text-align: center;
+         background: #bc1a6b;
+         color: white;
+         font-size: 30px;
+      }
+      main {
+         padding: 20px;
+         font-size: 18px;
+      }
+    #customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+   input[type=text] {
+	  padding: 10px;
+	  font-size: 17px;
+	  border: 1px solid grey;
+	  float: left;
+	  width: 50%;
+	  background: #CCCCCC;
+	  text-align: left;
+	}
+	input[type=submit] {
+	  background-color: #1252FF;
+	  width: 100px;
+	  font-size: 16px;
+	  padding: 10px;
+	}
+	input[type=submit]:hover {
+      background: #0b7dda;
+	}
+</style>
+</head>
+<body>
+
+  </html>
+  <table id="customers">
+      <thead class="border-bottom font-weight-bold">
+           <tr>
+              <th>Employee ID</th>
+              <th>Employee Name</th>
+              <th>Email</th>
+              <th>Contact</th>
+              <th>RPA</th>
+              <th>Java</th>
+              <th>C++</th>
+              <th>C#</th>
+              <th>Selenium</th>
+              <th>Python</th>
+              <th>Power BI</th>
+              <th>AzureDevOps</th>
+              <th>EDIT</th>
+              <th>DELETE</th>
+           </tr>
+      </thead>
+      <tbody>
+          {% for employee in employee_list %}
+              <tr>
+                  <td>{{employee.emp_code}}</td>
+                  <td>{{employee.full_name}}</td>
+                  <td>{{employee.email}}</td>
+                  <td>{{employee.contact}}</td>
+                  <td>{{employee.rpa}}</td>
+                  <td>{{employee.java}}</td>
+                  <td>{{employee.cplusplus}}</td>
+                  <td>{{employee.csharp}}</td>
+                  <td>{{employee.selenium}}</td>
+                  <td>{{employee.python}}</td>
+                  <td>{{employee.powerbi}}</td>
+                  <td>{{employee.azuredevops}}</td>
+                  <td><a href="{% url 'employee_update' employee.id %}"  class="btn btn-primary"> Edit</a></td>
+                  <td><a href="{% url 'employee_delete' employee.id %}"  class="btn btn-danger"> Delete</a></td>
+               </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+
+
+  <footer>
+    <a href="/api/contact/">Contact</a> |
+    <a href="/api/about/">About</a>
+</footer>
+
+<div class="footer-note">
+    <span id="ucFooterId_footer">Web application developed and maintained by EITC.</span>
+</div>
+</body>
+</html>

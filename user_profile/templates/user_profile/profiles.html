@@ -41,6 +41,11 @@
         <a href="{% url 'export_report' %}?format=pdf&skill={{ skill_query }}&level={{ level_query }}">Export PDF</a>
         <a href="{% url 'export_report' %}?format=doc&skill={{ skill_query }}&level={{ level_query }}">Export DOC</a>
         <a href="{% url 'upload_resume' %}">Upload Resume</a>
+        <a href="{% url 'employee_list' %}">Employee List</a>
+        <a href="{% url 'employee_form' %}">Employee form</a>
+
+
+        
     </div>
     <div class="profiles-container">
         {% for user in users %}

@@ -1,15 +1,19 @@
+# disc_forum/forms.py
+
 from django import forms
-from .models import Question, Answer
+from .models import Question, Attachment, Answer
 
 class QuestionForm(forms.ModelForm):
     class Meta:
         model = Question
-        fields = ['title', 'content']
+        fields = ['Keyword', 'Description']
 
 class AnswerForm(forms.ModelForm):
     class Meta:
         model = Answer
-        fields = ['content']
+        fields = ['Response']
 
-
-
+class AttachmentForm(forms.ModelForm):
+    class Meta:
+        model = Attachment
+        fields = ['file']
