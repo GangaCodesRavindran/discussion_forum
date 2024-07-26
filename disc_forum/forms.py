@@ -1,5 +1,4 @@
 # disc_forum/forms.py
-
 from django import forms
 from .models import Question, Attachment, Answer
 
@@ -11,7 +10,7 @@ class QuestionForm(forms.ModelForm):
 class AnswerForm(forms.ModelForm):
     class Meta:
         model = Answer
-        fields = ['Response']
+        fields = ['Response', 'attachment']
 
 class AttachmentForm(forms.ModelForm):
     class Meta:

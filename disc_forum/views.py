@@ -77,10 +77,11 @@ def forum(request):
 def question_detail(request, pk):
     question = get_object_or_404(Question, pk=pk)
     if request.method == 'POST':
-        form = AnswerForm(request.POST)
+        form = AnswerForm(request.POST, request.FILES)
         if form.is_valid():
             answer = form.save(commit=False)
             answer.question = question
+            answer.user = request.user  # Set the user who is posting the answer
             answer.save()
             return redirect('question_detail', pk=pk)
     else:
@@ -101,7 +102,7 @@ def update_answer(request, pk):
     answer = get_object_or_404(Answer, pk=pk)
     question_pk = answer.question.pk
     if request.method == 'POST':
-        form = AnswerForm(request.POST, instance=answer)
+        form = AnswerForm(request.POST, request.FILES, instance=answer)
         if form.is_valid():
             form.save()
             return redirect('question_detail', pk=question_pk)

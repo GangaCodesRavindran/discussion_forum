@@ -1,22 +1,19 @@
-// disc_forum/static/disc_forum/forum.js
-
 $(document).ready(function() {
-    // Initialize counter for attachment inputs
-    var attachmentCount = 1;
+    // Hide the attachment container initially
+    $('#attachment-container').hide();
 
-    // Function to add more attachment inputs
+    // Show attachment container and hide the Add More button when clicked
     $('#add-more-attachments').click(function(e) {
         e.preventDefault();
-        attachmentCount++;
-        var newInput = '<div><label for="id_attachment_' + attachmentCount + '">Attachment ' + attachmentCount + ':</label><input type="file" name="attachment_' + attachmentCount + '" id="id_attachment_' + attachmentCount + '"></div>';
-        $('#attachment-container').append(newInput);
+        $('#attachment-container').show();
+        $(this).hide();
     });
 
     // Function to clear form fields and reset attachment inputs
     function clearForm() {
         $('form')[0].reset(); // Reset the form
-        $('#attachment-container').html('<div><label for="id_attachment">Attachment 1:</label><input type="file" name="attachment" id="id_attachment"></div>');
-        attachmentCount = 1; // Reset the attachment counter
+        $('#attachment-container').hide(); // Hide the attachment container
+        $('#add-more-attachments').show(); // Show the Add More button
     }
 
     // Clear form fields after form submission
